@@ -3,40 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0E1218">
+  <meta name="theme-color" content="#02033D">
   <meta name="robots" content="noindex,nofollow">
   <title>Order a drink</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
   <header class="site-header">
-    <div class="site-header-inner">
-      <img class="brand-logo" src="assets/logo.svg" alt="Mechatronic Solutions">
-      <span class="station-tag" id="station-tag">--</span>
-    </div>
+    <img class="brand-logo" src="assets/logo.svg" alt="Mechatronic Solutions">
   </header>
 
   <main>
-    <div class="eyebrow">Bartender Bot</div>
+    <span class="station-eyebrow" id="station-tag">--</span>
     <h1>What can the robot pour you?</h1>
-    <p class="subtitle">Tap a drink. Delivery follows.</p>
+    <p class="subtitle">Tap a drink to order. Your drink will be delivered to <strong id="station-name">your station</strong>.</p>
 
     <ul class="drink-list" id="drink-list"></ul>
 
-    <div class="status" id="status"></div>
+    <div class="status" id="status" style="display:none"></div>
   </main>
 
   <footer class="site-footer">
     Powered by Mechatronic Solutions
   </footer>
 
-  <!-- Supabase JS client (from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
   <script src="assets/config.js"></script>
   <script src="assets/app.js"></script>
 </body>
