@@ -27,8 +27,8 @@
 
   // ---- Set up Supabase client ----
   const credentialsSet =
-    SUPABASE_URL !== 'https://gkbetyjucgahxwabcgbb.supabase.co' &&
-    SUPABASE_ANON_KEY !== 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrYmV0eWp1Y2dhaHh3YWJjZ2JiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4MTcyMzMsImV4cCI6MjA5NTM5MzIzM30.rT-OEceDdHdEuS2r9PI8Ns0n3bQ5IzqWx8fuMcJDsAA' &&
+    SUPABASE_URL !== 'YOUR_SUPABASE_URL_HERE' &&
+    SUPABASE_ANON_KEY !== 'YOUR_SUPABASE_ANON_KEY_HERE' &&
     SUPABASE_URL.length > 0;
 
   const client = credentialsSet
