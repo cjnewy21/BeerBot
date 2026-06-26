@@ -19,12 +19,12 @@
 // permit — in this case, inserting into the orders table.
 // ============================================================
 
-const SUPABASE_URL      = 'YOUR_SUPABASE_URL_HERE';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
+const SUPABASE_URL      = 'https://gkbetyjucgahxwabcgbb.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrYmV0eWp1Y2dhaHh3YWJjZ2JiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4MTcyMzMsImV4cCI6MjA5NTM5MzIzM30.rT-OEceDdHdEuS2r9PI8Ns0n3bQ5IzqWx8fuMcJDsAA';
 
 const STATIONS = [
-  { id: 1, name: 'Station 1', description: 'Main bar' },
-  // { id: 2, name: 'Station 2', description: 'Patio' },
+  { id: 1, name: 'Station 1'},
+  { id: 2, name: 'Station 2'},
   // { id: 3, name: 'Station 3', description: 'Lounge' },
   // { id: 4, name: 'Station 4', description: 'Back deck' },
   // { id: 5, name: 'Station 5', description: 'VIP' },
@@ -32,15 +32,15 @@ const STATIONS = [
 
 const DRINKS = [
   {
-    id: 'ipa',
-    name: 'IPA',
-    style: 'India Pale Ale',
-    notes: 'Hoppy, citrus, 6.5%',
+    id: 'surly-furious',
+    name: 'Surly Furious',
+    style: 'American IPA',
+    notes: 'Hoppy, citrus, 6.7%',
   },
   {
-    id: 'lager',
-    name: 'Lager',
-    style: 'Pilsner',
-    notes: 'Crisp, clean, 4.8%',
+    id: 'bud-light',
+    name: 'Bud Light',
+    style: 'Light Lager',
+    notes: 'Refreshing, clean, 4.2%',
   },
 ];
