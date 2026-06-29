@@ -5,7 +5,7 @@
 
 :root {
   /* ----- Color tokens (per user spec) ----- */
-  --bg:             #02033D;  /* deep navy background */
+  --bg:             #091029;  /* deep navy background */
   --surface:        #5C5C5E;  /* button background */
   --surface-hover:  #707074;  /* button hover */
   --text:           #FFFFFF;  /* primary text */
