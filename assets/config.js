@@ -25,9 +25,9 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const STATIONS = [
   { id: 1, name: 'Station 1'},
   { id: 2, name: 'Station 2'},
-  // { id: 3, name: 'Station 3', description: 'Lounge' },
-  // { id: 4, name: 'Station 4', description: 'Back deck' },
-  // { id: 5, name: 'Station 5', description: 'VIP' },
+  { id: 3, name: 'Station 3'},
+  { id: 4, name: 'Station 4'},
+  { id: 5, name: 'Station 5'},
 ];
 
 const DRINKS = [
