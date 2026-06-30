@@ -10,7 +10,7 @@
   --surface-hover:  #707074;  /* button hover */
   --text:           #FFFFFF;  /* primary text */
   --text-dim:       #D9D9D9;  /* secondary text — lower bound per spec */
-  --accent:         #5BB3F0;  /* bright sky blue (matches recolored logo) */
+  --accent:         #FFFFFF;  /* bright sky blue (matches recolored logo) */
   --accent-bright:  #7BC9FF;
   --success:        #6BAA7E;
   --error:          #D67264;
