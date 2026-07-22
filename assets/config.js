@@ -32,10 +32,10 @@ const STATIONS = [
 
 const DRINKS = [
   {
-    id: 'surly-furious',
-    name: 'Surly Furious',
-    style: 'American IPA',
-    notes: 'Hoppy, citrus, 6.7%',
+    id: '1919-rootbeer',
+    name: '1919',
+    style: 'Root Beer',
+    notes: 'Smooth, Vanilla, Non-Alcoholic',
   },
   {
     id: 'bud-light',
