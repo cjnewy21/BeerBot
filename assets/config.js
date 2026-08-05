@@ -37,10 +37,10 @@ const DRINKS = [
     style: 'Root Beer',
     notes: 'Smooth, Vanilla, Non-Alcoholic',
   },
-/*
+  {
     id: 'bud-light',
     name: 'Bud Light',
     style: 'Light Lager',
     notes: 'Refreshing, clean, 4.2%',
-  }, */
+  },
 ];
