@@ -32,8 +32,8 @@ const STATIONS = [
 
 const DRINKS = [
   {
-    id: 'millstream-rootbeer',
-    name: 'Millstream',
+    id: '1919-rootbeer',
+    name: '1919',
     style: 'Root Beer',
     notes: 'Smooth, Vanilla, Non-Alcoholic',
   },
