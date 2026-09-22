@@ -36,11 +36,13 @@ const DRINKS = [
     name: '1919',
     style: 'Root Beer',
     notes: 'Smooth, Vanilla, Non-Alcoholic',
+	available: true
   },
   {
     id: 'bud-light',
     name: 'Bud Light',
     style: 'Light Lager',
     notes: 'Refreshing, clean, 4.2%',
+	available: false
   },
 ];

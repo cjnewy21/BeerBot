@@ -195,6 +195,17 @@ h1 {
   background: var(--accent);
   color: var(--bg);
 }
+.drink-card--unavailable {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.drink-card--unavailable:hover,
+.drink-card--unavailable:focus-visible {
+  background: var(--surface);
+  border-color: var(--surface);
+}
 
 /* ----- Status panel (only shows during/after an order) ----- */
 

@@ -56,19 +56,34 @@
   function renderMenu() {
     drinkListEl.innerHTML = '';
     DRINKS.forEach(drink => {
-      const btn = document.createElement('button');
-      btn.className = 'drink-card';
-      btn.type = 'button';
-      btn.innerHTML =
-        '<div class="drink-info">' +
-          '<div class="drink-name">' + drink.name + '</div>' +
-          '<div class="drink-style">' + drink.style + '</div>' +
-          '<div class="drink-notes">' + drink.notes + '</div>' +
-        '</div>' +
-        '<div class="drink-chevron" aria-hidden="true">&rarr;</div>';
-      btn.addEventListener('click', () => placeOrder(drink));
-      drinkListEl.appendChild(btn);
-    });
+	  const btn = document.createElement('button');
+	  btn.className = 'drink-card';
+	  btn.type = 'button';
+
+	  // NEW: mark unavailable drinks
+	  if (drink.available === false) {
+		btn.disabled = true;
+		btn.classList.add('drink-card--unavailable');
+	  }
+
+	  btn.innerHTML =
+		'<div class="drink-info">' +
+		  '<div class="drink-name">' + drink.name + '</div>' +
+		  '<div class="drink-style">' + drink.style + '</div>' +
+		  '<div class="drink-notes">' +
+			drink.notes +
+			(drink.available === false ? ' &middot; <em>Currently unavailable</em>' : '') +
+		  '</div>' +
+		'</div>' +
+		'<div class="drink-chevron" aria-hidden="true">&rarr;</div>';
+
+	  btn.addEventListener('click', () => {
+		if (drink.available === false) return;
+		placeOrder(drink);
+	  });
+
+	  drinkListEl.appendChild(btn);
+	});
     hideStatus();
   }
 
