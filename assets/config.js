@@ -28,10 +28,10 @@ const STATIONS = [
 
 const DRINKS = [
   {
-    id: 'surly-furious',
-    name: 'Millstream Root Beer',
+    id: '1919-rootbeer',
+    name: '1919',
     style: 'Root Beer',
-    notes: 'Sweet, creamy, 0% ABV',
+    notes: 'Smooth, Vanilla, Non-Alcoholic',
     available: true
     // No time restrictions — orderable any time.
   },
