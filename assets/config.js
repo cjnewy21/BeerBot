@@ -15,8 +15,8 @@
 //    so device clock manipulation doesn't bypass them.
 // ============================================================
 
-const SUPABASE_URL      = 'YOUR_SUPABASE_URL_HERE';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
+const SUPABASE_URL      = 'https://gkbetyjucgahxwabcgbb.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrYmV0eWp1Y2dhaHh3YWJjZ2JiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTgxNzIzMywiZXhwIjoyMDk1MzkzMjMzfQ.FDlsmQP8zs5DJOFokkCYmH5H8LTQNyHHCTE2OSq2jOs';
 
 const STATIONS = [
   { id: 1, name: 'Station 1', description: 'Main bar' },
