@@ -2,47 +2,46 @@
 // CONFIGURATION
 // ============================================================
 // 1. Fill in your Supabase credentials below.
-//    Get them from your Supabase dashboard:
-//      Settings -> API
-//      - "Project URL"             -> SUPABASE_URL
-//      - "Project API Keys" (anon) -> SUPABASE_ANON_KEY
+//    Get them from: Supabase dashboard -> Settings -> API
 //
-// 2. Add or remove stations in STATIONS. The admin page
-//    automatically renders a QR code for every entry.
+// 2. Add or remove stations in STATIONS.
 //
-// 3. Add or remove drinks in DRINKS. (When you add a new drink
-//    here, also INSERT a matching row into the `drinks` table
-//    in Supabase — see db/schema.sql.)
-//
-// NOTE: It is SAFE to put the anon key in a public repo. It
-// only allows what your Supabase Row Level Security policies
-// permit — in this case, inserting into the orders table.
+// 3. Add or remove drinks in DRINKS.
+//    Optional per-drink availability fields:
+//      available:     false to grey out entirely
+//      availableFrom: "HH:MM" (24-hour, Central Time) - orderable at/after
+//      availableTo:   "HH:MM" (24-hour, Central Time) - orderable before
+//    All time checks use CENTRAL TIME from the Supabase server,
+//    so device clock manipulation doesn't bypass them.
 // ============================================================
 
-const SUPABASE_URL      = 'https://gkbetyjucgahxwabcgbb.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrYmV0eWp1Y2dhaHh3YWJjZ2JiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4MTcyMzMsImV4cCI6MjA5NTM5MzIzM30.rT-OEceDdHdEuS2r9PI8Ns0n3bQ5IzqWx8fuMcJDsAA';
+const SUPABASE_URL      = 'YOUR_SUPABASE_URL_HERE';
+const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
 
 const STATIONS = [
-  { id: 1, name: 'Station 1'},
-  { id: 2, name: 'Station 2'},
-  { id: 3, name: 'Station 3'},
-  { id: 4, name: 'Station 4'},
-  { id: 5, name: 'Station 5'},
+  { id: 1, name: 'Station 1', description: 'Main bar' },
+  { id: 2, name: 'Station 2', description: 'Patio' },
+  { id: 3, name: 'Station 3', description: 'Lounge' },
+  { id: 4, name: 'Station 4', description: 'Back deck' },
+  { id: 5, name: 'Station 5', description: 'VIP' },
 ];
 
 const DRINKS = [
   {
-    id: '1919-rootbeer',
-    name: '1919',
+    id: 'surly-furious',
+    name: 'Millstream Root Beer',
     style: 'Root Beer',
-    notes: 'Smooth, Vanilla, Non-Alcoholic',
-	available: true
+    notes: 'Sweet, creamy, 0% ABV',
+    available: true
+    // No time restrictions — orderable any time.
   },
   {
     id: 'bud-light',
     name: 'Bud Light',
     style: 'Light Lager',
     notes: 'Refreshing, clean, 4.2%',
-	available: false
+    available: true,
+    availableFrom: '16:00'   // 4:00 PM Central
+    // No availableTo means "until end of day".
   },
 ];
