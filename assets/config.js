@@ -41,7 +41,7 @@ const DRINKS = [
     style: 'Light Lager',
     notes: 'Refreshing, clean, 4.2%',
     available: true,
-    availableFrom: '16:00'   // 4:00 PM Central
+    //availableFrom: '16:00'   // 4:00 PM Central
     // No availableTo means "until end of day".
   },
 ];
