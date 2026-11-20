@@ -169,10 +169,12 @@
         '</div>' +
         '<div class="drink-chevron" aria-hidden="true">&rarr;</div>';
 
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', async () => {
         // Re-check availability at click time (not just at render time)
-        // so drinks that just crossed a threshold behave correctly.
-        if (!isDrinkAvailable(drink)) return;
+        // so drinks that just crossed a threshold, or were just marked
+        // unavailable on the control page, behave correctly.
+        await loadDrinkSettings(client);
+        if (!isDrinkAvailable(drink)) { renderMenu(); return; }
         placeOrder(drink);
       });
 
@@ -235,21 +237,22 @@
   // BOOT: sync time, render, then set up periodic refresh
   // ============================================================
 
-  // Wait for server time (up to 2 sec) before first render so
-  // the initial menu already reflects the correct availability.
+  // Wait for server time and live drink settings (up to 2 sec)
+  // before first render so the initial menu is already correct.
   Promise.race([
-    syncServerTime(),
+    Promise.all([syncServerTime(), loadDrinkSettings(client)]),
     new Promise(resolve => setTimeout(() => resolve(false), 2000))
   ]).then(() => {
     renderMenu();
   });
 
-  // Re-render every 30 seconds so time-gated drinks flip
-  // automatically when the clock crosses their threshold
-  // (e.g. Bud Light enabling at 4:00 PM). Only re-renders if
-  // the menu is currently showing — never disrupts a
-  // sending/success/error state.
-  setInterval(() => {
+  // Every 30 seconds, reload drink settings (control page changes)
+  // and re-render so time-gated drinks flip automatically when the
+  // clock crosses their threshold (e.g. Bud Light at 4:00 PM).
+  // Only re-renders if the menu is currently showing — never
+  // disrupts a sending/success/error state.
+  setInterval(async () => {
+    await loadDrinkSettings(client);
     if (statusEl.style.display === 'none') {
       renderMenu();
     }

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#091029">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Drink controls</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <img class="brand-logo" src="assets/logo.png" alt="Mechatronic Solutions">
+  </header>
+
+  <main>
+    <span class="station-eyebrow">Control</span>
+    <h1>Drink controls</h1>
+    <p class="subtitle">Turn drinks on or off and set their time limits. Changes reach every order screen within 30 seconds.</p>
+
+    <!-- Step 1: PIN -->
+    <form class="master-form" id="pin-form">
+      <label class="field">
+        <span class="field-label">Control PIN</span>
+        <input class="field-select field-input" id="pin-input" type="password"
+               autocomplete="current-password" required>
+      </label>
+      <button class="btn btn-primary btn-block" type="submit" id="pin-btn">Unlock</button>
+    </form>
+
+    <!-- Step 2: drink controls -->
+    <div id="controls" style="display:none">
+      <ul class="control-list" id="control-list"></ul>
+      <div class="btn-row">
+        <button class="btn" type="button" id="lock-btn">Lock</button>
+      </div>
+    </div>
+
+    <div class="status" id="status" style="display:none"></div>
+  </main>
+
+  <footer class="site-footer">
+    Staff only — do not share this URL with customers
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/control.js"></script>
+</body>
+</html>

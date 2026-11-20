@@ -13,6 +13,11 @@
 //      availableTo:   "HH:MM" (24-hour, Central Time) - orderable before
 //    All time checks use CENTRAL TIME from the Supabase server,
 //    so device clock manipulation doesn't bypass them.
+//
+//    NOTE: once db/control_page.sql has been run, availability and
+//    time limits are controlled from control.html (stored in the
+//    Supabase drinks table). The values below are then only used
+//    if the database can't be reached.
 // ============================================================
 
 const SUPABASE_URL      = 'https://gkbetyjucgahxwabcgbb.supabase.co';
@@ -43,7 +48,7 @@ const DRINKS = [
     style: 'Light Lager',
     notes: 'Refreshing, clean, 4.2%',
     available: true,
-    //availableFrom: '16:00'   // 4:00 PM Central
+    availableFrom: '16:00'   // 4:00 PM Central
     // No availableTo means "until end of day".
   },
 ];
