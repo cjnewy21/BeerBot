@@ -16,7 +16,9 @@
 // ============================================================
 
 const SUPABASE_URL      = 'https://gkbetyjucgahxwabcgbb.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrYmV0eWp1Y2dhaHh3YWJjZ2JiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTgxNzIzMywiZXhwIjoyMDk1MzkzMjMzfQ.FDlsmQP8zs5DJOFokkCYmH5H8LTQNyHHCTE2OSq2jOs';
+// Publishable key: safe to be public. NEVER put a secret or
+// service_role key here - this file is served to every browser.
+const SUPABASE_ANON_KEY = 'sb_publishable_iWDcjdpEwBUa0vo599mLRw_8_aod8V1';
 
 const STATIONS = [
   { id: 1, name: 'Station 1', description: 'Main bar' },
